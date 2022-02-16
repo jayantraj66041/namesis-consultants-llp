@@ -85,3 +85,8 @@ class LogInSerializer(serializers.Serializer):
             update_last_login(None, self.user)
 
         return data
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        fields = ['pk', 'username', 'email', 'address']
+        model = User
